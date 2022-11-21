@@ -1,0 +1,7 @@
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|addons|assets|themes|cron|(.*).js|robots\.txt)
+RewriteRule ^(.*)$ index.php/?$1 [L]
+#RewriteRule ^(.*)$ ./index.php/?$1 [L]
+
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
